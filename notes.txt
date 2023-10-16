@@ -1,0 +1,15 @@
+-REST (representational state transfer) APIs :
+
+-JSON (javascript object notation)
+    *lightweight data-interchange format
+    *plain text
+    *language independent
+    *used to send data b/w computers.
+    * key/value pair
+
+
+
+=>Working flow
+1. Adding http package in project (pubspec.yaml) : for Integrating  APIs with in our project we need to add http package.
+2. installing JsonToDart plugin (in android studio) : this helps us to create models in dart according to Json.
+3. Now Consuming
