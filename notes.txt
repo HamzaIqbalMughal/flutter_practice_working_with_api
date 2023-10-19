@@ -12,4 +12,9 @@
 =>Working flow
 1. Adding http package in project (pubspec.yaml) : for Integrating  APIs with in our project we need to add http package.
 2. installing JsonToDart plugin (in android studio) : this helps us to create models in dart according to Json.
-3. Now Consuming
+3. Now Consuming,
+    *first create model using JsonToDart,
+    *make a List<Model> , (which will later be populated using Future Function)
+    *Now create a Future function , with return type of List<Model> (our newly created model)
+    *now use FutureBuilder widget to create and populate the UI
+
