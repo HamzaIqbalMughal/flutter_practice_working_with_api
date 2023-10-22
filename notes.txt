@@ -18,3 +18,5 @@
     *Now create a Future function , with return type of List<Model> (our newly created model)
     *now use FutureBuilder widget to create and populate the UI
 
+
+* todo: Again create Model using jsontoDart plugin in android studio.

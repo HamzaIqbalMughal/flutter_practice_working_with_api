@@ -45,7 +45,6 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Expanded(
-
             child: FutureBuilder(
               future: getPostApi(),
               builder: (context, snapshot) {
@@ -69,14 +68,24 @@ class _HomeScreenState extends State<HomeScreen> {
                           padding: const EdgeInsets.all(12),
                           child: RichText(
                             text: TextSpan(
-                              style: DefaultTextStyle.of(context).style,
-                              children: <TextSpan>[
-                                TextSpan(text: 'Title\n', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                                TextSpan(text: postList[index].title.toString()+'\n'),
-                                TextSpan(text: 'Body\n', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold)),
-                                TextSpan(text: postList[index].body.toString()),
-                              ]
-                            ),
+                                style: DefaultTextStyle.of(context).style,
+                                children: <TextSpan>[
+                                  TextSpan(
+                                      text: 'Title\n',
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text: postList[index].title.toString() +
+                                          '\n'),
+                                  TextSpan(
+                                      text: 'Body\n',
+                                      style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold)),
+                                  TextSpan(
+                                      text: postList[index].body.toString()),
+                                ]),
                           ),
                         ),
                       );
