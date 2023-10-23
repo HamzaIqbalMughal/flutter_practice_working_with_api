@@ -51,6 +51,10 @@ now snapshot is picking the listItem one by one (if we are not returning List in
 
 => ****************************************************** Example5 ************************************************************
 In example 5 of Get API,
+Handling Complex Json object and loading its data on Screen.
+the json object on which we are working in Example 5 , is a single object, which is containing nested object,
+so in this example we did'nt make the List<Model> (list of anymodel type), 
+we just creted the model using plugin, no this using (the object of) this model we are showing data on UI. 
 
 * webhook.site (this site is used for creating fake APIs)
 * jsonviewer (we can paste the response on this site, and it give us a clean view of json response)

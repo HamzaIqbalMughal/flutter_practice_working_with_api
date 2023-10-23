@@ -2,17 +2,18 @@
 /// message : "All data"
 /// data : [{"_id":"asdf231asdfadsfsad2438rjsd","on_sale":true,"sale_percent":20,"sold":20,"slider_new":false,"slider_recent":false,"slider_sold":false,"date":"2023-01-05T07: 56: 19.219Z","title":"TMTS121-50199","categories":{"_id":"asdf231asdfadsfsad2438rjsd","type":"Women","sale_percent":20,"date":"2023-01-05T07: 56: 19.219Z","name":"clothes","image":"https: //images.pexels.com/photos/4495705/pexels-photo-4495705.jpeg?auto=compress&cs=tinysrgb&w=1200"},"subcat":{"_id":"asdf231asdfadsfsad2438rjsd","type":"Women","sale_percent":20,"date":"2023-01-05T07: 56: 19.219Z","name":"Shirts"},"shop":{"_id":"asdf231asdfadsfsad2438rjsd","is_active":false,"created_At":"2023-01-05T07: 56: 19.219Z","name":"Shirts","description":"This is enderobe brand","shopemail":"adenreobe@gmail.com","shopaddress":"Islamabad F8","shopcity":"Islamabad","userid":"23asdfasfdsfd","image":"https://images.pexels.com/photos/5531004/pexels-photo-5531004.jpeg?auto=compress&cs=tinysrgb&w=1200"},"price":"2500","sale_title":"Winter Sale","sale_price":"2300","description":"22% off all the sales ","color":"#FF6347,#CD5C5C","size":"S,M,L,XL,XXL","in_wishlist":true,"images":[{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/4495705/pexels-photo-4495705.jpeg?auto=compress&cs=tinysrgb&w=1200"},{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&w=1200"}]},{"_id":"asdf231asdfadsfsad2438rjsd","on_sale":true,"sale_percent":20,"sold":20,"slider_new":false,"slider_recent":false,"slider_sold":false,"date":"2023-01-05T07: 56: 19.219Z","title":"TMTS121-50199","categories":{"_id":"asdf231asdfadsfsad2438rjsd","type":"Women","sale_percent":20,"date":"2023-01-05T07: 56: 19.219Z","name":"clothes","image":"https: //images.pexels.com/photos/4495705/pexels-photo-4495705.jpeg?auto=compress&cs=tinysrgb&w=1200"},"subcat":{"_id":"asdf231asdfadsfsad2438rjsd","type":"Women","sale_percent":20,"date":"2023-01-05T07: 56: 19.219Z","name":"Shirts"},"shop":{"_id":"asdf231asdfadsfsad2438rjsd","is_active":false,"created_At":"2023-01-05T07: 56: 19.219Z","name":"Shirts","description":"This is enderobe brand","shopemail":"adenreobe@gmail.com","shopaddress":"Islamabad F8","shopcity":"Islamabad","userid":"23asdfasfdsfd","image":"https://images.pexels.com/photos/5531004/pexels-photo-5531004.jpeg?auto=compress&cs=tinysrgb&w=1200"},"price":"2500","sale_title":"Winter Sale","sale_price":"2300","description":"22% off all the sales ","color":"#FF6347,#CD5C5C","size":"S,M,L,XL,XXL","in_wishlist":true,"images":[{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/4495705/pexels-photo-4495705.jpeg?auto=compress&cs=tinysrgb&w=1200"},{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&w=1200"}]},{"_id":"asdf231asdfadsfsad2438rjsd","on_sale":true,"sale_percent":20,"sold":20,"slider_new":false,"slider_recent":false,"slider_sold":false,"date":"2023-01-05T07: 56: 19.219Z","title":"TMTS121-50199","categories":{"_id":"asdf231asdfadsfsad2438rjsd","type":"Women","sale_percent":20,"date":"2023-01-05T07: 56: 19.219Z","name":"clothes","image":"https: //images.pexels.com/photos/4495705/pexels-photo-4495705.jpeg?auto=compress&cs=tinysrgb&w=1200"},"subcat":{"_id":"asdf231asdfadsfsad2438rjsd","type":"Women","sale_percent":20,"date":"2023-01-05T07: 56: 19.219Z","name":"Shirts"},"shop":{"_id":"asdf231asdfadsfsad2438rjsd","is_active":false,"created_At":"2023-01-05T07: 56: 19.219Z","name":"Shirts","description":"This is enderobe brand","shopemail":"adenreobe@gmail.com","shopaddress":"Islamabad F8","shopcity":"Islamabad","userid":"23asdfasfdsfd","image":"https://images.pexels.com/photos/5531004/pexels-photo-5531004.jpeg?auto=compress&cs=tinysrgb&w=1200"},"price":"2500","sale_title":"Winter Sale","sale_price":"2300","description":"22% off all the sales ","color":"#FF6347,#CD5C5C","size":"S,M,L,XL,XXL","in_wishlist":true,"images":[{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"},{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/4495705/pexels-photo-4495705.jpeg?auto=compress&cs=tinysrgb&w=1200"},{"id":"2342asdfasdf34","url":"https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&w=1200"}]}]
 
-class ProductModel {
-  ProductModel({
-      bool? success, 
-      String? message, 
-      List<Data>? data,}){
+class ProductsModel {
+  ProductsModel({
+    bool? success,
+    String? message,
+    List<Data>? data,
+  }) {
     _success = success;
     _message = message;
     _data = data;
-}
+  }
 
-  ProductModel.fromJson(dynamic json) {
+  ProductsModel.fromJson(dynamic json) {
     _success = json['success'];
     _message = json['message'];
     if (json['data'] != null) {
@@ -25,13 +26,16 @@ class ProductModel {
   bool? _success;
   String? _message;
   List<Data>? _data;
-ProductModel copyWith({  bool? success,
-  String? message,
-  List<Data>? data,
-}) => ProductModel(  success: success ?? _success,
-  message: message ?? _message,
-  data: data ?? _data,
-);
+  ProductsModel copyWith({
+    bool? success,
+    String? message,
+    List<Data>? data,
+  }) =>
+      ProductsModel(
+        success: success ?? _success,
+        message: message ?? _message,
+        data: data ?? _data,
+      );
   bool? get success => _success;
   String? get message => _message;
   List<Data>? get data => _data;
@@ -45,7 +49,6 @@ ProductModel copyWith({  bool? success,
     }
     return map;
   }
-
 }
 
 /// _id : "asdf231asdfadsfsad2438rjsd"
@@ -71,26 +74,27 @@ ProductModel copyWith({  bool? success,
 
 class Data {
   Data({
-      String? id, 
-      bool? onSale, 
-      num? salePercent, 
-      num? sold, 
-      bool? sliderNew, 
-      bool? sliderRecent, 
-      bool? sliderSold, 
-      String? date, 
-      String? title, 
-      Categories? categories, 
-      Subcat? subcat, 
-      Shop? shop, 
-      String? price, 
-      String? saleTitle, 
-      String? salePrice, 
-      String? description, 
-      String? color, 
-      String? size, 
-      bool? inWishlist, 
-      List<Images>? images,}){
+    String? id,
+    bool? onSale,
+    num? salePercent,
+    num? sold,
+    bool? sliderNew,
+    bool? sliderRecent,
+    bool? sliderSold,
+    String? date,
+    String? title,
+    Categories? categories,
+    Subcat? subcat,
+    Shop? shop,
+    String? price,
+    String? saleTitle,
+    String? salePrice,
+    String? description,
+    String? color,
+    String? size,
+    bool? inWishlist,
+    List<Images>? images,
+  }) {
     _id = id;
     _onSale = onSale;
     _salePercent = salePercent;
@@ -111,7 +115,7 @@ class Data {
     _size = size;
     _inWishlist = inWishlist;
     _images = images;
-}
+  }
 
   Data.fromJson(dynamic json) {
     _id = json['_id'];
@@ -123,7 +127,9 @@ class Data {
     _sliderSold = json['slider_sold'];
     _date = json['date'];
     _title = json['title'];
-    _categories = json['categories'] != null ? Categories.fromJson(json['categories']) : null;
+    _categories = json['categories'] != null
+        ? Categories.fromJson(json['categories'])
+        : null;
     _subcat = json['subcat'] != null ? Subcat.fromJson(json['subcat']) : null;
     _shop = json['shop'] != null ? Shop.fromJson(json['shop']) : null;
     _price = json['price'];
@@ -160,47 +166,50 @@ class Data {
   String? _size;
   bool? _inWishlist;
   List<Images>? _images;
-Data copyWith({  String? id,
-  bool? onSale,
-  num? salePercent,
-  num? sold,
-  bool? sliderNew,
-  bool? sliderRecent,
-  bool? sliderSold,
-  String? date,
-  String? title,
-  Categories? categories,
-  Subcat? subcat,
-  Shop? shop,
-  String? price,
-  String? saleTitle,
-  String? salePrice,
-  String? description,
-  String? color,
-  String? size,
-  bool? inWishlist,
-  List<Images>? images,
-}) => Data(  id: id ?? _id,
-  onSale: onSale ?? _onSale,
-  salePercent: salePercent ?? _salePercent,
-  sold: sold ?? _sold,
-  sliderNew: sliderNew ?? _sliderNew,
-  sliderRecent: sliderRecent ?? _sliderRecent,
-  sliderSold: sliderSold ?? _sliderSold,
-  date: date ?? _date,
-  title: title ?? _title,
-  categories: categories ?? _categories,
-  subcat: subcat ?? _subcat,
-  shop: shop ?? _shop,
-  price: price ?? _price,
-  saleTitle: saleTitle ?? _saleTitle,
-  salePrice: salePrice ?? _salePrice,
-  description: description ?? _description,
-  color: color ?? _color,
-  size: size ?? _size,
-  inWishlist: inWishlist ?? _inWishlist,
-  images: images ?? _images,
-);
+  Data copyWith({
+    String? id,
+    bool? onSale,
+    num? salePercent,
+    num? sold,
+    bool? sliderNew,
+    bool? sliderRecent,
+    bool? sliderSold,
+    String? date,
+    String? title,
+    Categories? categories,
+    Subcat? subcat,
+    Shop? shop,
+    String? price,
+    String? saleTitle,
+    String? salePrice,
+    String? description,
+    String? color,
+    String? size,
+    bool? inWishlist,
+    List<Images>? images,
+  }) =>
+      Data(
+        id: id ?? _id,
+        onSale: onSale ?? _onSale,
+        salePercent: salePercent ?? _salePercent,
+        sold: sold ?? _sold,
+        sliderNew: sliderNew ?? _sliderNew,
+        sliderRecent: sliderRecent ?? _sliderRecent,
+        sliderSold: sliderSold ?? _sliderSold,
+        date: date ?? _date,
+        title: title ?? _title,
+        categories: categories ?? _categories,
+        subcat: subcat ?? _subcat,
+        shop: shop ?? _shop,
+        price: price ?? _price,
+        saleTitle: saleTitle ?? _saleTitle,
+        salePrice: salePrice ?? _salePrice,
+        description: description ?? _description,
+        color: color ?? _color,
+        size: size ?? _size,
+        inWishlist: inWishlist ?? _inWishlist,
+        images: images ?? _images,
+      );
   String? get id => _id;
   bool? get onSale => _onSale;
   num? get salePercent => _salePercent;
@@ -254,7 +263,6 @@ Data copyWith({  String? id,
     }
     return map;
   }
-
 }
 
 /// id : "2342asdfasdf34"
@@ -262,11 +270,12 @@ Data copyWith({  String? id,
 
 class Images {
   Images({
-      String? id, 
-      String? url,}){
+    String? id,
+    String? url,
+  }) {
     _id = id;
     _url = url;
-}
+  }
 
   Images.fromJson(dynamic json) {
     _id = json['id'];
@@ -274,11 +283,14 @@ class Images {
   }
   String? _id;
   String? _url;
-Images copyWith({  String? id,
-  String? url,
-}) => Images(  id: id ?? _id,
-  url: url ?? _url,
-);
+  Images copyWith({
+    String? id,
+    String? url,
+  }) =>
+      Images(
+        id: id ?? _id,
+        url: url ?? _url,
+      );
   String? get id => _id;
   String? get url => _url;
 
@@ -288,7 +300,6 @@ Images copyWith({  String? id,
     map['url'] = _url;
     return map;
   }
-
 }
 
 /// _id : "asdf231asdfadsfsad2438rjsd"
@@ -304,16 +315,17 @@ Images copyWith({  String? id,
 
 class Shop {
   Shop({
-      String? id, 
-      bool? isActive, 
-      String? createdAt, 
-      String? name, 
-      String? description, 
-      String? shopemail, 
-      String? shopaddress, 
-      String? shopcity, 
-      String? userid, 
-      String? image,}){
+    String? id,
+    bool? isActive,
+    String? createdAt,
+    String? name,
+    String? description,
+    String? shopemail,
+    String? shopaddress,
+    String? shopcity,
+    String? userid,
+    String? image,
+  }) {
     _id = id;
     _isActive = isActive;
     _createdAt = createdAt;
@@ -324,7 +336,7 @@ class Shop {
     _shopcity = shopcity;
     _userid = userid;
     _image = image;
-}
+  }
 
   Shop.fromJson(dynamic json) {
     _id = json['_id'];
@@ -348,27 +360,30 @@ class Shop {
   String? _shopcity;
   String? _userid;
   String? _image;
-Shop copyWith({  String? id,
-  bool? isActive,
-  String? createdAt,
-  String? name,
-  String? description,
-  String? shopemail,
-  String? shopaddress,
-  String? shopcity,
-  String? userid,
-  String? image,
-}) => Shop(  id: id ?? _id,
-  isActive: isActive ?? _isActive,
-  createdAt: createdAt ?? _createdAt,
-  name: name ?? _name,
-  description: description ?? _description,
-  shopemail: shopemail ?? _shopemail,
-  shopaddress: shopaddress ?? _shopaddress,
-  shopcity: shopcity ?? _shopcity,
-  userid: userid ?? _userid,
-  image: image ?? _image,
-);
+  Shop copyWith({
+    String? id,
+    bool? isActive,
+    String? createdAt,
+    String? name,
+    String? description,
+    String? shopemail,
+    String? shopaddress,
+    String? shopcity,
+    String? userid,
+    String? image,
+  }) =>
+      Shop(
+        id: id ?? _id,
+        isActive: isActive ?? _isActive,
+        createdAt: createdAt ?? _createdAt,
+        name: name ?? _name,
+        description: description ?? _description,
+        shopemail: shopemail ?? _shopemail,
+        shopaddress: shopaddress ?? _shopaddress,
+        shopcity: shopcity ?? _shopcity,
+        userid: userid ?? _userid,
+        image: image ?? _image,
+      );
   String? get id => _id;
   bool? get isActive => _isActive;
   String? get createdAt => _createdAt;
@@ -394,7 +409,6 @@ Shop copyWith({  String? id,
     map['image'] = _image;
     return map;
   }
-
 }
 
 /// _id : "asdf231asdfadsfsad2438rjsd"
@@ -405,17 +419,18 @@ Shop copyWith({  String? id,
 
 class Subcat {
   Subcat({
-      String? id, 
-      String? type, 
-      num? salePercent, 
-      String? date, 
-      String? name,}){
+    String? id,
+    String? type,
+    num? salePercent,
+    String? date,
+    String? name,
+  }) {
     _id = id;
     _type = type;
     _salePercent = salePercent;
     _date = date;
     _name = name;
-}
+  }
 
   Subcat.fromJson(dynamic json) {
     _id = json['_id'];
@@ -429,17 +444,20 @@ class Subcat {
   num? _salePercent;
   String? _date;
   String? _name;
-Subcat copyWith({  String? id,
-  String? type,
-  num? salePercent,
-  String? date,
-  String? name,
-}) => Subcat(  id: id ?? _id,
-  type: type ?? _type,
-  salePercent: salePercent ?? _salePercent,
-  date: date ?? _date,
-  name: name ?? _name,
-);
+  Subcat copyWith({
+    String? id,
+    String? type,
+    num? salePercent,
+    String? date,
+    String? name,
+  }) =>
+      Subcat(
+        id: id ?? _id,
+        type: type ?? _type,
+        salePercent: salePercent ?? _salePercent,
+        date: date ?? _date,
+        name: name ?? _name,
+      );
   String? get id => _id;
   String? get type => _type;
   num? get salePercent => _salePercent;
@@ -455,7 +473,6 @@ Subcat copyWith({  String? id,
     map['name'] = _name;
     return map;
   }
-
 }
 
 /// _id : "asdf231asdfadsfsad2438rjsd"
@@ -467,19 +484,20 @@ Subcat copyWith({  String? id,
 
 class Categories {
   Categories({
-      String? id, 
-      String? type, 
-      num? salePercent, 
-      String? date, 
-      String? name, 
-      String? image,}){
+    String? id,
+    String? type,
+    num? salePercent,
+    String? date,
+    String? name,
+    String? image,
+  }) {
     _id = id;
     _type = type;
     _salePercent = salePercent;
     _date = date;
     _name = name;
     _image = image;
-}
+  }
 
   Categories.fromJson(dynamic json) {
     _id = json['_id'];
@@ -495,19 +513,22 @@ class Categories {
   String? _date;
   String? _name;
   String? _image;
-Categories copyWith({  String? id,
-  String? type,
-  num? salePercent,
-  String? date,
-  String? name,
-  String? image,
-}) => Categories(  id: id ?? _id,
-  type: type ?? _type,
-  salePercent: salePercent ?? _salePercent,
-  date: date ?? _date,
-  name: name ?? _name,
-  image: image ?? _image,
-);
+  Categories copyWith({
+    String? id,
+    String? type,
+    num? salePercent,
+    String? date,
+    String? name,
+    String? image,
+  }) =>
+      Categories(
+        id: id ?? _id,
+        type: type ?? _type,
+        salePercent: salePercent ?? _salePercent,
+        date: date ?? _date,
+        name: name ?? _name,
+        image: image ?? _image,
+      );
   String? get id => _id;
   String? get type => _type;
   num? get salePercent => _salePercent;
@@ -525,5 +546,4 @@ Categories copyWith({  String? id,
     map['image'] = _image;
     return map;
   }
-
 }
