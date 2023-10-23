@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_working_with_api/example_four_screen.dart';
 import 'package:flutter_practice_working_with_api/example_three_screen.dart';
 import 'package:flutter_practice_working_with_api/example_two_screen.dart';
 import 'package:flutter_practice_working_with_api/home_screen.dart';
@@ -21,14 +22,14 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute : ExampleThreeScreen.screen_id,
+      // initialRoute : ExampleThreeScreen.screen_id,
+      initialRoute: ExampleFourScreen.screen_id,
       routes: {
         HomeScreen.screen_id: (context) => HomeScreen(),
         ExampleTwoScreen.screen_id: (context) => ExampleTwoScreen(),
         ExampleThreeScreen.screen_id: (context) => ExampleThreeScreen(),
+        ExampleFourScreen.screen_id: (context) => ExampleFourScreen(),
       },
-
-      home: ExampleTwoScreen(),
     );
   }
 }

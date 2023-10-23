@@ -9,7 +9,11 @@
 
 
 
+---  Working with Get API ---
+
+
 =>Working flow
+=> **************************************************************************************************************************
 1. Adding http package in project (pubspec.yaml) : for Integrating  APIs with in our project we need to add http package.
 2. installing JsonToDart plugin (in android studio) : this helps us to create models in dart according to Json.
 3. Now Consuming,
@@ -18,13 +22,35 @@
     *Now create a Future function , with return type of List<Model> (our newly created model)
     *now use FutureBuilder widget to create and populate the UI
 
-=>
-1. created custom model, without using any plugin (jsontodart).
+=> ****************************************************** Example2 ************************************************************
+In Example 2 of Get API, created custom model, without using any plugin (jsontodart).
 
-=>
-1. Working with complex json object, (nested objects).
+=> ****************************************************** Example3 ************************************************************
+In Example3 of Get API, Working with complex json object, (nested objects). using jsontoDart plugin,
+- shown the loading data from API on card.
+
+=> ****************************************************** Example4 ************************************************************
+In Example4 of Get API, working with APIs without creating model (dynamically consuming api , its like a hack/jugar ),
+
+In the keyvalue pair, if key is having spaces, plugin will not be able to make the Model. that's why we are doing Example 4.
+
+FutureBuilder(
+      future: getPhotos(),
+      builder: (context, snapshot) {
+          if (snapshot.hasData) {
+
+          } else {
+          }
+      },
+),
+
+In the above code snippet of FutureBuilder, we pass future function,
+and future function will be returning any List<Model> ,
+now snapshot is picking the listItem one by one (if we are not returning List in future function, then snapshot is not useable),
+
+=> ****************************************************** Example5 ************************************************************
+In example 5 of Get API,
 
 
 
-* todo: Again create Model using jsontoDart plugin in android studio.
-
+---  Working with  ---

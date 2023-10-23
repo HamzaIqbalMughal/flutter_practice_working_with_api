@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_working_with_api/Models/user_model.dart';
 import 'package:http/http.dart' as http;
 
+import 'Components/row_for_card.dart';
+
 class ExampleThreeScreen extends StatefulWidget {
   const ExampleThreeScreen({super.key});
 
@@ -99,19 +101,3 @@ class _ExampleThreeScreenState extends State<ExampleThreeScreen> {
   }
 }
 
-class RowForCard extends StatelessWidget {
-  String title, value;
-
-  RowForCard({required this.title, required this.value, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title),
-        Text(value),
-      ],
-    );
-  }
-}
