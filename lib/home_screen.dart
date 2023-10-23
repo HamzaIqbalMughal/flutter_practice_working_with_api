@@ -2,10 +2,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_practice_working_with_api/Models/posts_model.dart';
-import 'package:flutter_practice_working_with_api/example_two.dart';
+import 'package:flutter_practice_working_with_api/example_two_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  static const String screen_id = 'HomeScreen';
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();

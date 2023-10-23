@@ -2,14 +2,16 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class ExampleTwo extends StatefulWidget {
-  const ExampleTwo({super.key});
+class ExampleTwoScreen extends StatefulWidget {
+  const ExampleTwoScreen({super.key});
+
+  static const String screen_id = 'ExampleTwo';
 
   @override
-  State<ExampleTwo> createState() => _ExampleTwoState();
+  State<ExampleTwoScreen> createState() => _ExampleTwoScreenState();
 }
 
-class _ExampleTwoState extends State<ExampleTwo> {
+class _ExampleTwoScreenState extends State<ExampleTwoScreen> {
   List<PhotoModel> photosList = [];
 
   Future<List<PhotoModel>> getPhotos() async {
