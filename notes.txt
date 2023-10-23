@@ -32,7 +32,8 @@ In Example3 of Get API, Working with complex json object, (nested objects). usin
 => ****************************************************** Example4 ************************************************************
 In Example4 of Get API, working with APIs without creating model (dynamically consuming api , its like a hack/jugar ),
 
-In the keyvalue pair, if key is having spaces, plugin will not be able to make the Model. that's why we are doing Example 4.
+In the k
+eyvalue pair, if key is having spaces, plugin will not be able to make the Model. that's why we are doing Example 4.
 
 FutureBuilder(
       future: getPhotos(),
@@ -50,6 +51,10 @@ now snapshot is picking the listItem one by one (if we are not returning List in
 
 => ****************************************************** Example5 ************************************************************
 In example 5 of Get API,
+
+* webhook.site (this site is used for creating fake APIs)
+* jsonviewer (we can paste the response on this site, and it give us a clean view of json response)
+
 
 
 
