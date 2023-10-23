@@ -55,6 +55,9 @@ In example 5 of Get API,
 * webhook.site (this site is used for creating fake APIs)
 * jsonviewer (we can paste the response on this site, and it give us a clean view of json response)
 
+-created model using plugin,
+-Loading data on Example5 Screen
+
 
 
 
