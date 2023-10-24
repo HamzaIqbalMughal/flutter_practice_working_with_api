@@ -87,7 +87,15 @@ https://reqres.in/ (this site helps us to )
       SignUp : when we hit the endpoint 'https://reqres.in/api/register' , it returns us { "id": 4, "token": "QpwL5tke4Pnpja7X4" }
       LogIn : when we hit the endpoint 'https://reqres.in/api/login' , it returns us { "token": "QpwL5tke4Pnpja7X4" }
 
-  ***************************************************** asadsd **************************************************************
+  ***************************************************** Upload file/Image **************************************************************
+  - Uploading file/image to REST API/Server using Multiport Http Request with Null safety
+
+  1. added model_progress_hud and image_picker package/library in pubspec.yaml
+  2. created Future async Function pickImage() : for picking/selecting image from gallery (can also be picked from camera or storage)
+  3. created Future async function uploadImage() : for uploading image/file to Server using endpoint (Api)
+  4. using model_progress_hud to show progress to user while uploading Image
+  5. now we will be using multiport 
+  6. adding permission in androidmanifest.xml file
 
 
 
