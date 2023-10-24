@@ -7,62 +7,87 @@
     *used to send data b/w computers.
     * key/value pair
 
-
-
----  Working with Get API ---
-
-
-=>Working flow
-=> **************************************************************************************************************************
-1. Adding http package in project (pubspec.yaml) : for Integrating  APIs with in our project we need to add http package.
-2. installing JsonToDart plugin (in android studio) : this helps us to create models in dart according to Json.
-3. Now Consuming,
-    *first create model using JsonToDart,
-    *make a List<Model> , (which will later be populated using Future Function)
-    *Now create a Future function , with return type of List<Model> (our newly created model)
-    *now use FutureBuilder widget to create and populate the UI
-
-=> ****************************************************** Example2 ************************************************************
-In Example 2 of Get API, created custom model, without using any plugin (jsontodart).
-
-=> ****************************************************** Example3 ************************************************************
-In Example3 of Get API, Working with complex json object, (nested objects). using jsontoDart plugin,
-- shown the loading data from API on card.
-
-=> ****************************************************** Example4 ************************************************************
-In Example4 of Get API, working with APIs without creating model (dynamically consuming api , its like a hack/jugar ),
-
-In the k
-eyvalue pair, if key is having spaces, plugin will not be able to make the Model. that's why we are doing Example 4.
-
-FutureBuilder(
-      future: getPhotos(),
-      builder: (context, snapshot) {
-          if (snapshot.hasData) {
-
-          } else {
-          }
-      },
-),
-
-In the above code snippet of FutureBuilder, we pass future function,
-and future function will be returning any List<Model> ,
-now snapshot is picking the listItem one by one (if we are not returning List in future function, then snapshot is not useable),
-
-=> ****************************************************** Example5 ************************************************************
-In example 5 of Get API,
-Handling Complex Json object and loading its data on Screen.
-the json object on which we are working in Example 5 , is a single object, which is containing nested object,
-so in this example we did'nt make the List<Model> (list of anymodel type), 
-we just creted the model using plugin, no this using (the object of) this model we are showing data on UI. 
-
 * webhook.site (this site is used for creating fake APIs)
 * jsonviewer (we can paste the response on this site, and it give us a clean view of json response)
 
--created model using plugin,
--Loading data on Example5 Screen
+
+________________________________________________________________GET API__________________________________________________________________________
+
+---  Working with Get API ---
+    *Things Learned in GET APIs Practice:
+        -learned about Json
+        -learned 4 scenarios of json response
+            1. APIs response is an array of object, and the plugin(JsonToDart) is just making the model of single object, not the whole array. (homeScreen' Example)
+            2. response is complex json, (nested object)
+            3. response is complex json and model can not be created, so created a dynamic variable fetched the response (without using model) and showed it on UI (Example4)
+            4. how to hierarchy of API works, how to understand, also implemented API whose response is an object containing , nested object of any model (Example5)
+
+=>Working flow
+  **************************************************************************************************************************
+    1. Adding http package in project (pubspec.yaml) : for Integrating  APIs with in our project we need to add http package.
+    2. installing JsonToDart plugin (in android studio) : this helps us to create models in dart according to Json.
+    3. Now Consuming,
+        *first create model using JsonToDart,
+        *make a List<Model> , (which will later be populated using Future Function)
+        *Now create a Future function , with return type of List<Model> (our newly created model)
+        *now use FutureBuilder widget to create and populate the UI
+
+  ****************************************************** Example2 ************************************************************
+    In Example 2 of Get API, created custom model, without using any plugin (jsontodart).
+
+  ****************************************************** Example3 ************************************************************
+    In Example3 of Get API, Working with complex json object, (nested objects). using jsontoDart plugin,
+    - shown the loading data from API on card.
+
+  ****************************************************** Example4 ************************************************************
+    In Example4 of Get API, working with APIs without creating model (dynamically consuming api , its like a hack/jugar ),
+
+    In the k
+    eyvalue pair, if key is having spaces, plugin will not be able to make the Model. that's why we are doing Example 4.
+
+    FutureBuilder(
+          future: getPhotos(),
+          builder: (context, snapshot) {
+              if (snapshot.hasData) {
+
+              } else {
+              }
+          },
+    ),
+
+    In the above code snippet of FutureBuilder, we pass future function,
+    and future function will be returning any List<Model> ,
+    now snapshot is picking the listItem one by one (if we are not returning List in future function, then snapshot is not useable),
+
+  ****************************************************** Example5 ************************************************************
+    In example 5 of Get API,
+    Handling Complex Json object and loading its data on Screen.
+    the json object on which we are working in Example 5 , is a single object, which is containing nested object,
+    so in this example we did'nt make the List<Model> (list of anymodel type),
+    we just creted the model using plugin, no this using (the object of) this model we are showing data on UI.
+
+    * webhook.site (this site is used for creating fake APIs)
+    * jsonviewer (we can paste the response on this site, and it give us a clean view of json response)
+
+    -created model using plugin,
+    -Loading data on Example5 Screen
+
+________________________________________________________________POST API__________________________________________________________________________
+
+---  Working with Post APIs ---
+
+https://reqres.in/ (this site helps us to )
+
+=> Working flow
+  ***************************************************** signup_screen **************************************************************
+  Used reqres.in site and got the end point for POST (register successful) , checked the end point in postman,
+  practice SignUp and Login, using the end points given by reqres.in
+
+  ->first of all created the request using http.post(), in this method we passed email and password as object like this : { 'email': 'abc', 'password' : 'abc'}
+      SignUp : when we hit the endpoint 'https://reqres.in/api/register' , it returns us { "id": 4, "token": "QpwL5tke4Pnpja7X4" }
+      LogIn : when we hit the endpoint 'https://reqres.in/api/login' , it returns us { "token": "QpwL5tke4Pnpja7X4" }
+
+  ***************************************************** asadsd **************************************************************
 
 
 
-
----  Working with  ---
