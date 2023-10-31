@@ -1,3 +1,19 @@
+// Things Learned in this project
+1. What is API , how it works
+2. Understanding JSON structure
+3. testing API
+4. different types of API ; Get and Post
+5. GET APIs
+    a. Using plugin , how to parse data
+    b. using custom model
+    c. without creating model, fetching and showing data
+    d. how to create/use fake API
+9. Post API
+
+
+
+ ========= Notes ==============
+
 -REST (representational state transfer) APIs :
 
 -JSON (javascript object notation)
