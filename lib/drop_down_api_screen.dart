@@ -15,20 +15,38 @@ class DropDownAPIScreen extends StatefulWidget {
 }
 
 class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
-  
   List<DropDownModel> postsList = [];
-  
-  Future<List<DropDownModel>> getPost() async  {
-    try{
-      final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+
+  Future<List<DropDownModel>> getPost() async {
+    try {
+      final response = await http
+          .get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
 
       var body = jsonDecode(response.body.toString());
 
-      if(response.statusCode == 200){
+      if (response.statusCode == 200) {
+        postsList.clear();
+        for (Map i in body) {
+          DropDownModel post = DropDownModel(
+            userId: i['userId'],
+            id: i['id'],
+            title: i['title'],
+            body: i['body'],
+          );
+          postsList.add(post);
+        }
+        return postsList;
+      } else {
+        return postsList;
+      }
+      /*
+      var body = jsonDecode(response.body.toString());
+
+      if (response.statusCode == 200) {
         postsList.clear();
 
-        return body.map((e){
-          final map = e as Map<String, dynamic> ;
+        return body.map((e) {
+          final map = e as Map<String, dynamic>;
           return DropDownModel(
             id: map['id'],
             title: map['title'],
@@ -37,12 +55,13 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
           );
         }).toList();
       }
-    } on SocketException{
+      */
+    } on SocketException {
       throw Exception('no internet');
     }
     throw Exception('Error in API fetching');
   }
-  
+
   var selectedValue;
 
   @override
@@ -52,38 +71,36 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
         title: Text('Dropdown Api'),
       ),
       body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FutureBuilder<List<DropDownModel>>(
-                future: getPost(),
-                builder: (context, snapshot){
-                  if(snapshot.hasData){
-                    return DropdownButton(
-                      isExpanded: true,
-                      value: selectedValue,
-                      hint: Text('Select Value'),
-                        items: snapshot.data!.map((e) {
-                          return DropdownMenuItem(
-                            value: e.id.toString(),
-                              child: Text(e.id.toString()),
-                          );
-                        }).toList(),
-                        onChanged: (value){
-                          selectedValue = value;
-                          setState(() {
-
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FutureBuilder<List<DropDownModel>>(
+                  future: getPost(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return DropdownButton(
+                          isExpanded: true,
+                          value: selectedValue,
+                          hint: Text('Select Value'),
+                          items: snapshot.data!.map((e) {
+                            return DropdownMenuItem(
+                              value: e.id.toString(),
+                              child: Text(e.title.toString()),
+                            );
+                          }).toList(),
+                          onChanged: (value) {
+                            selectedValue = value;
+                            setState(() {});
                           });
-                        }
-                    );
-                  }else{
-                    return CircularProgressIndicator();
-                  }
-                }
-            )
-          ],
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  })
+            ],
+          ),
         ),
       ),
     );
