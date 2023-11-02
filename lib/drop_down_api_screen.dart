@@ -16,9 +16,9 @@ class DropDownAPIScreen extends StatefulWidget {
 }
 
 class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
-  
+
   List<DropDownModel> postsList = [];
-  
+
   Future<List<DropDownModel>> getPost() async  {
     try{
       final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
@@ -51,7 +51,7 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
       throw Exception('no internet');
     }
   }
-  
+
   var selectedValue;
 
   @override
@@ -61,7 +61,7 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
         title: Text('Dropdown Api'),
       ),
       body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -71,13 +71,13 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
                 builder: (context, snapshot){
                   if(snapshot.hasData){
                     return DropdownButton(
-                      isExpanded: true,
-                      value: selectedValue,
-                      hint: Text('Select Value'),
+                        isExpanded: true,
+                        value: selectedValue,
+                        hint: Text('Select Value'),
                         items: snapshot.data!.map((e) {
                           return DropdownMenuItem(
                             value: e.id.toString(),
-                              child: Text(e.id.toString()),
+                            child: Text(e.id.toString()),
                           );
                         }).toList(),
                         onChanged: (value){
