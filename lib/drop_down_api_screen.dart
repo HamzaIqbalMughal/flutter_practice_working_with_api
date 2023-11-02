@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_working_with_api/example_two_screen.dart';
 import 'package:http/http.dart' as http;
 import 'Models/dropdown_model.dart';
 
@@ -27,20 +28,28 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
       if(response.statusCode == 200){
         postsList.clear();
 
-        return body.map((e){
-          final map = e as Map<String, dynamic> ;
-          return DropDownModel(
-            id: map['id'],
-            title: map['title'],
-            userId: map['userId'],
-            body: map['body'],
-          );
-        }).toList();
+        for(Map i in body){
+          postsList.add(DropDownModel.fromJson(i));
+        }
+
+        return postsList;
+
+        // return body.map((e){
+        //   final map = e as Map<String, dynamic> ;
+        //   return DropDownModel(
+        //     id: map['id'],
+        //     title: map['title'],
+        //     userId: map['userId'],
+        //     body: map['body'],
+        //   );
+        // }).toList();
+      }
+      else{
+        return postsList;
       }
     } on SocketException{
       throw Exception('no internet');
     }
-    throw Exception('Error in API fetching');
   }
   
   var selectedValue;
@@ -79,7 +88,7 @@ class _DropDownAPIScreenState extends State<DropDownAPIScreen> {
                         }
                     );
                   }else{
-                    return CircularProgressIndicator();
+                    return Center(child: CircularProgressIndicator());
                   }
                 }
             )
