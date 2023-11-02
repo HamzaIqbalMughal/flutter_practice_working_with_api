@@ -4,6 +4,7 @@ import 'package:flutter_practice_working_with_api/example_five_screen.dart';
 import 'package:flutter_practice_working_with_api/example_four_screen.dart';
 import 'package:flutter_practice_working_with_api/example_three_screen.dart';
 import 'package:flutter_practice_working_with_api/example_two_screen.dart';
+import 'package:flutter_practice_working_with_api/example_one.dart';
 import 'package:flutter_practice_working_with_api/home_screen.dart';
 import 'package:flutter_practice_working_with_api/signup_screen.dart';
 import 'package:flutter_practice_working_with_api/upload_image_screen.dart';
@@ -31,9 +32,12 @@ class MyApp extends StatelessWidget {
       // initialRoute: ExampleFiveScreen.screen_id,
       // initialRoute: SignUpScreen.screen_id,
       // initialRoute: UploadImageScreen.screen_id,
-      initialRoute: DropDownAPIScreen.screen_id,
+      // initialRoute: DropDownAPIScreen.screen_id,
+
+      initialRoute: HomeScreen.screen_id,
       routes: {
         HomeScreen.screen_id: (context) => HomeScreen(),
+        ExampleOne.screen_id: (context) => ExampleOne(),
         ExampleTwoScreen.screen_id: (context) => ExampleTwoScreen(),
         ExampleThreeScreen.screen_id: (context) => ExampleThreeScreen(),
         ExampleFourScreen.screen_id: (context) => ExampleFourScreen(),

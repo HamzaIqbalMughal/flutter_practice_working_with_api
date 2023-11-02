@@ -1,8 +1,5 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter_practice_working_with_api/Models/posts_model.dart';
-import 'package:flutter_practice_working_with_api/example_two_screen.dart';
+import 'package:flutter_practice_working_with_api/example_one.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,91 +11,61 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String url = 'https://jsonplaceholder.typicode.com/posts';
+  List<ScreenModel> screensList = [];
 
-  List<PostsModel> postList = [];
+  String selectedValue='se';
 
-  Future<List<PostsModel>> getPostApi() async {
-    final response = await http.get(Uri.parse(url));
-    var data = jsonDecode(response.body.toString());
-    if (response.statusCode == 200) {
-      postList.clear();
-      for (Map i in data) {
-        postList.add(PostsModel.fromJson(i));
-      }
-      return postList;
-    } else {
-      return postList;
-    }
+  void populateScreenList() {
+    screensList.clear();
+    screensList.add(ScreenModel(id: 1, screenName: 'Example 1'));
+    screensList.add(ScreenModel(id: 2, screenName: 'Example 2'));
+    screensList.add(ScreenModel(id: 3, screenName: 'Example 3'));
+    screensList.add(ScreenModel(id: 4, screenName: 'Example 4'));
+    screensList.add(ScreenModel(id: 5, screenName: 'Example 5'));
+    screensList.add(ScreenModel(id: 6, screenName: 'DropDown Button with API'));
+    screensList.add(ScreenModel(id: 7, screenName: 'SignUp Screen'));
+    screensList.add(ScreenModel(id: 8, screenName: 'Upload Image Screen'));
   }
 
   @override
   Widget build(BuildContext context) {
+
+    populateScreenList();
+
     return Scaffold(
-      backgroundColor: Colors.blue,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'HomeScreen',
-          style: TextStyle(color: Colors.white),
+
+      body: SafeArea(
+          child: Center(
+        child: DropdownButton(
+          // value: selectedValue,
+          hint: Text('Select the Screen'),
+          items: screensList.map((e) {
+            return DropdownMenuItem(
+              value: e.id.toString(),
+              child: Text(e.screenName.toString()),
+            );
+          }).toList(),
+          onChanged: (value) {
+            selectedValue != value;
+            setState(() {
+
+            });
+          },
+          // items: [
+          //   DropdownMenuItem(
+          //     value: screensList[],
+          //       child: Text('data')
+          //   )
+          // ],
         ),
-        centerTitle: true,
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: FutureBuilder(
-              future: getPostApi(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) {
-                  // return Text('Loading');
-                  return Center(
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-                      strokeWidth: 10,
-                      strokeAlign: 10,
-                    ),
-                  );
-                } else {
-                  return ListView.builder(
-                    itemCount: postList.length,
-                    itemBuilder: (context, index) {
-                      // return Text(index.toString());
-                      // return Text(postList[index].title.toString());
-                      return Card(
-                        child: Padding(
-                          padding: const EdgeInsets.all(12),
-                          child: RichText(
-                            text: TextSpan(
-                                style: DefaultTextStyle.of(context).style,
-                                children: <TextSpan>[
-                                  TextSpan(
-                                      text: 'Title\n',
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text: postList[index].title.toString() +
-                                          '\n'),
-                                  TextSpan(
-                                      text: 'Body\n',
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.bold)),
-                                  TextSpan(
-                                      text: postList[index].body.toString()),
-                                ]),
-                          ),
-                        ),
-                      );
-                    },
-                  );
-                }
-              },
-            ),
-          )
-        ],
-      ),
+      )),
     );
   }
+}
+
+class ScreenModel {
+  final int id;
+  final String screenName;
+
+  ScreenModel({required this.id, required this.screenName});
 }
