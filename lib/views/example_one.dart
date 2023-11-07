@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_practice_working_with_api/Models/posts_model.dart';
-import 'package:flutter_practice_working_with_api/example_two_screen.dart';
 
 class ExampleOne extends StatefulWidget {
+
   const ExampleOne({super.key});
 
   static const String screen_id = 'ExampleOne';
@@ -34,15 +34,20 @@ class _ExampleOneState extends State<ExampleOne> {
 
   @override
   Widget build(BuildContext context) {
+
+    final arguments = ModalRoute.of(context)!.settings.arguments as Map ;  // this is to catch the arguments passed while using pushNamed()
+
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         title: Text(
-          'HomeScreen',
+          'Example 1',
+          // arguments.toString(),
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
+        leading: Text(arguments.toString()),
       ),
       body: Column(
         children: [

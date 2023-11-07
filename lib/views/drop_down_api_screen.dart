@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_practice_working_with_api/example_two_screen.dart';
 import 'package:http/http.dart' as http;
-import 'Models/dropdown_model.dart';
+
+import '../Models/dropdown_model.dart';
 
 class DropDownAPIScreen extends StatefulWidget {
   const DropDownAPIScreen({super.key});

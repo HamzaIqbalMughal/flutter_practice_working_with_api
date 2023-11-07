@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice_working_with_api/drop_down_api_screen.dart';
-import 'package:flutter_practice_working_with_api/example_five_screen.dart';
-import 'package:flutter_practice_working_with_api/example_four_screen.dart';
-import 'package:flutter_practice_working_with_api/example_one.dart';
-import 'package:flutter_practice_working_with_api/example_three_screen.dart';
-import 'package:flutter_practice_working_with_api/example_two_screen.dart';
-import 'package:flutter_practice_working_with_api/signup_screen.dart';
-import 'package:flutter_practice_working_with_api/upload_image_screen.dart';
+import 'package:flutter_practice_working_with_api/views/dicebear_picture_screen.dart';
+import 'package:flutter_practice_working_with_api/views/drop_down_api_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_five_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_four_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_one.dart';
+import 'package:flutter_practice_working_with_api/views/example_three_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_two_screen.dart';
+import 'package:flutter_practice_working_with_api/views/signup_screen.dart';
+import 'package:flutter_practice_working_with_api/views/upload_image_screen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     screensList.add(ScreenModel(id: 6, screenName: 'DropDown Button with API'));
     screensList.add(ScreenModel(id: 7, screenName: 'SignUp Screen'));
     screensList.add(ScreenModel(id: 8, screenName: 'Upload Image Screen'));
+    screensList.add(ScreenModel(id: 9, screenName: 'Image from DiceBear'));
   }
 
   @override
@@ -105,8 +107,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       case '8':
                         selectedRoute = UploadImageScreen.screen_id;
                         break;
+                      case '9':
+                        selectedRoute = DicebearPicScreen.screen_id;
+                        break;
                     }
-                    Navigator.pushNamed(context, selectedRoute);
+                    Navigator.pushNamed(context, selectedRoute,
+                    arguments: {
+                      'name' : 'Hamza Iqbal',
+                      'age' : 25
+                    }
+                    );
                   }
                 },
                 child: Container(

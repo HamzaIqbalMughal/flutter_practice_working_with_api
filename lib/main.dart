@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice_working_with_api/drop_down_api_screen.dart';
-import 'package:flutter_practice_working_with_api/example_five_screen.dart';
-import 'package:flutter_practice_working_with_api/example_four_screen.dart';
-import 'package:flutter_practice_working_with_api/example_three_screen.dart';
-import 'package:flutter_practice_working_with_api/example_two_screen.dart';
-import 'package:flutter_practice_working_with_api/example_one.dart';
-import 'package:flutter_practice_working_with_api/home_screen.dart';
-import 'package:flutter_practice_working_with_api/signup_screen.dart';
-import 'package:flutter_practice_working_with_api/upload_image_screen.dart';
+import 'package:flutter_practice_working_with_api/views/dicebear_picture_screen.dart';
+import 'package:flutter_practice_working_with_api/views/drop_down_api_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_five_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_four_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_one.dart';
+import 'package:flutter_practice_working_with_api/views/example_three_screen.dart';
+import 'package:flutter_practice_working_with_api/views/example_two_screen.dart';
+import 'package:flutter_practice_working_with_api/views/home_screen.dart';
+import 'package:flutter_practice_working_with_api/views/signup_screen.dart';
+import 'package:flutter_practice_working_with_api/views/upload_image_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         SignUpScreen.screen_id: (context) => SignUpScreen(),
         UploadImageScreen.screen_id: (context) => UploadImageScreen(),
         DropDownAPIScreen.screen_id: (context) => DropDownAPIScreen(),
+        DicebearPicScreen.screen_id: (context) => DicebearPicScreen(),
       },
     );
   }

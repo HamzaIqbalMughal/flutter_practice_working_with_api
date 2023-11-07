@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_working_with_api/Models/user_model.dart';
 import 'package:http/http.dart' as http;
 
-import 'Components/row_for_card.dart';
+import '../Components/row_for_card.dart';
 
 class ExampleThreeScreen extends StatefulWidget {
   const ExampleThreeScreen({super.key});
