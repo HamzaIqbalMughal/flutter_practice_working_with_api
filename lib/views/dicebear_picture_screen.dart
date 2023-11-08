@@ -17,10 +17,11 @@ class _DicebearPicScreenState extends State<DicebearPicScreen> {
 
   TextEditingController _nameControlller = TextEditingController();
 
+  String seedValue='Abby';
+
   Future<String> getImageFromDiceBear() async {
     final response = await http
-        .get(Uri.parse('https://api.dicebear.com/7.x/initials/svg?seed=heelo'));
-
+        .get(Uri.parse('https://api.dicebear.com/7.x/adventurer/svg?seed=${seedValue}'));
     if (response.statusCode == 200) {
       return response.body;
     } else {
@@ -53,6 +54,7 @@ class _DicebearPicScreenState extends State<DicebearPicScreen> {
                   future: getImageFromDiceBear(),
                   builder: (context, snapshot){
                     if(snapshot.connectionState == ConnectionState.waiting){
+                      // return Center(child: CircularProgressIndicator());
                       return CircularProgressIndicator();
                     }else if(snapshot.hasError){
                       return Text('Error : ${snapshot.error}');
@@ -75,15 +77,23 @@ class _DicebearPicScreenState extends State<DicebearPicScreen> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 50,
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(12),
-                  
+              GestureDetector(
+                onTap: (){
+                  seedValue = _nameControlller.text.toString();
+                  setState(() {
+
+                  });
+                },
+                child: Container(
+                  height: 50,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(12),
+
+                  ),
+                  child: Center(child: Text('Generate Pic')),
                 ),
-                child: Center(child: Text('Generate Pic')),
               ),
             ],
 
